@@ -1,0 +1,68 @@
+{
+  "name": "@tarsilla/react-kanban-components",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./lib/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.cjs",
+      "import": "./lib/index.mjs",
+      "default": "./lib/index.mjs"
+    },
+    "./text": {
+      "types": "./lib/text/index.d.ts",
+      "require": "./lib/text/index.cjs",
+      "import": "./lib/text/index.mjs",
+      "default": "./lib/text/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib/*",
+    "src/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && rollup -c",
+    "prepub": "npm run build",
+    "pub": "npm publish --access public",
+    "prepare": "husky"
+  },
+  "peerDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "dependencies": {
+    "@tarsilla/react-components": "^0.0.22",
+    "@tarsilla/react-form-components": "^0.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "@tarsilla/eslint-config": "^0.0.60",
+    "@tarsilla/rollup-config": "^0.0.8",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.7",
+    "semantic-release": "^24.2.3",
+    "typescript": "^5.8.2"
+  }
+}
