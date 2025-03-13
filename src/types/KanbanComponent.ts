@@ -1,7 +1,5 @@
 import { JSX } from 'react';
 
-import { UnknownObject } from './UnknownObject.js';
-
 type KanbanComponentProps<ComponentValue, ComponentProps> = {
   id: string;
   value?: ComponentValue;
@@ -9,7 +7,7 @@ type KanbanComponentProps<ComponentValue, ComponentProps> = {
   onChange?: (value?: ComponentValue) => void;
 } & Omit<Omit<ComponentProps, 'onChange'>, 'value'>;
 
-type KanbanComponent<ComponentValue, ComponentProps extends UnknownObject | undefined | null = undefined> = {
+type KanbanComponent<ComponentValue, ComponentProps extends object | undefined | null = undefined> = {
   id: string;
   render: (props: KanbanComponentProps<ComponentValue, ComponentProps>) => JSX.Element;
 };
